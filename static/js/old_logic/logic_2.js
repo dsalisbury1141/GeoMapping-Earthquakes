@@ -1,15 +1,18 @@
 //API for all EQ https://www.usgs.gov/natural-hazards/earthquake-hazards/earthquakes
 
 // Store our API endpoint inside queryUrl
-var EQUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+//var tectonicPlates = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json"
+// d3.json(tectonicPlates, function(faultlines)
 
-// Perform a GET request to the EQUrl
-d3.json(EQUrl,function(data) {
+// Perform a GET request to the query URL
+d3.json(queryUrl, function(data) {
   // Once we get a response, send the data.features object to the createFeatures function
   createFeatures(data.features);
   console.log(data);
 });
 
+function createFeatures(earthquakeData) {
 
   // Define a function we want to run once for each feature in the features array
   // Give each feature a popup describing the place and time of the earthquake
@@ -20,17 +23,6 @@ d3.json(EQUrl,function(data) {
        "</p><hr><p>Coordinates:" + (feature.geometry.coordinates) + "</p>") // not too sure about this one
   }
   
-    
-  function createFeatures(earthquakeData) {
-
-    // Define a function we want to run once for each feature in the features array
-    // Give each feature a popup describing the place and time of the earthquake
-    function onEachFeature(feature, layer) {
-      layer.bindPopup("<h3>Earthquake:" + feature.properties.place +
-        "</h3><hr><p>Date/Time:" + new Date(feature.properties.time) +
-         "</p><hr><p>Magnitude:" + (feature.properties.mag) + 
-         "</p><hr><p>Coordinates:" + (feature.geometry.coordinates) + "</p>") // not too sure about this one
-    }
  
   function circleSize(mag) {
     if (mag <= 1) {
@@ -77,14 +69,18 @@ d3.json(EQUrl,function(data) {
   var earthquakes = L.geoJSON(earthquakeData, {
     onEachFeature: onEachFeature,
     pointToLayer: createCircleMarkers
-  
+  // var earthquakes = L.geoJSON(earthquakeData, {
+  //   onEachFeature: oneEachFeature,
+  //   pointToLayer: createCircleMarkers
+  // });
+
 });
 
   createMap(earthquakes);
 }
 
 function createMap(earthquakes) {
-
+//STOP
   // Define map layers
   var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -118,9 +114,7 @@ function createMap(earthquakes) {
 
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
-    Earthquakes: earthquakes,
-    //Faultlines: tectonicPlates
-
+    Earthquakes: earthquakes
   };
 
   // Create our map, giving it the streetmap and earthquakes layers to display on load
@@ -137,7 +131,6 @@ function createMap(earthquakes) {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
-  
   
  
 //Create and add legend
@@ -168,26 +161,65 @@ legend.onAdd = function() {
 
   legend.addTo(myMap);
 
-}; 
-var tectonicUrl = "https://https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json";
-//   // d3.json(tectonicPlates, function(faultlines)
+};
+
+ // //Create and add legend
+  // var legend = L.control({ position: "bottomright" });
+  // legend.onAdd = function() {
+  //   var div = L.DomUtil.create("div", "info legend");
+  //   var limits = [1,2,3,4,5];
+  //   var colors = ["green","blue", "red", "yellow"];
+  //   var labels = ["1", "2", "3", "4", "5>"];
+
+
+// will need to style the divs to make inline will need a class style for div
+// <li><div style= background-color:color></div><div>limit[index], limit[index + 1]</div>"
+    // colors.forEach(function(color, index) {
+    //   labels.push("<li><div style=\"background-color: " + color + "\">"+ limits[index] + "</li>");
+    // });
+  //   colors.forEach(function(color, index) {
+  //     labels.push(`<li><div style= "background-color:${color};display:'inline-block';height:75px; width:50px"></div><div>${limits[index]}, limit[index + 1]</div>`);
+  //   });
+
+  //   div.innerHTML += "<ul>" + labels.join("") + "</ul>";
+  //   return div;
+  // };
+
+  // Adding legend to the map
   
-//Perform a GET request to the titonicURL
-d3.json(tectonicUrl,function(plateData) {
-  // Once we get a response, send the data.features object to the createFeatures function
-  createFeatures(plateData.features);
-  console.log(plateData);
-});
 
-d3.json(EQUrl,function(data) {
-  // Once we get a response, send the data.features object to the createFeatures function
-  createFeatures(data.features);
-  console.log(data);
-});
 
-// var tectonicPlates = L.geoJSON(plateData, {
-//   color: "orange", 
-//   weight: 3
-// })
+// var earthquakes =L.geoJson(earthquakeData, {
+    //   pointToLayer: function (latlng) {
+    //     return L.circleMarker(latlng, earthquakeData);
+    //     }
+      
+    // })
+  //     onEachFeature: onEachFeature,
+  //   })
+  // var earthquakes = L.geoJSON(earthquakeData, {
+  //   pointToLayer: function (feature.geometry.coordinates) {
+  //     return L.circleMarker(latlng, earthquakeData)
+  // //   onEachFeature: onEachFeature,
+  // //   pointToLayer:createCircleLayer
 
-// tectonicPlates.addTo(map)
+  // });
+
+    // Sending our earthquakes layer to the createMap function
+//    createMap(earthquakes);
+
+// // new GeoJson layer for earthquake array
+  //function createCircleLayer() { 
+//   return {
+  
+  // var createCircleLayer = L.circle(feature, coordinate)
+  //   radius: feature.properties.mag * 5,
+  //   fillColor: chooseColor,
+  //   color: chooseColor,
+  //   weight: 1,
+  //   opacity: 1,
+  //   fillOpacity: 0.5
+  //  }
+
+    // Create a GeoJSON layer containing the features array on the earthquakeData object
+  // Run the onEachFeature function once for each piece of data in the array
