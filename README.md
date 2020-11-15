@@ -1,6 +1,5 @@
 # GeoMapping using Leaflet 
-This model incudes the current 7 days of earthquake data with a magnitude of *,<1 to 5+.
-[Visit my Model](https://dsalisbury1141.github.io/GeoMapping-Earthquakes/)
+[Click here to see where the last 7 Days of <strong>earthquakes with a magnitude of <1 to 5+</strong>](https://dsalisbury1141.github.io/GeoMapping-Earthquakes/)
 
 
 <img align="center" src="https://github.com/dsalisbury1141/Leaflet-Challenge/blob/master/Images/Github%20post.PNG" width="1000">
