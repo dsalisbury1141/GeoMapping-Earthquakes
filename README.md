@@ -4,6 +4,7 @@
 <li> <strong>Map Types:</strong> shows the street map, dark map and satellite maps</li>
 
 
+<a> Image below is an example</a>
 <img align="center" src="https://github.com/dsalisbury1141/Leaflet-Challenge/blob/master/Images/Github%20post.PNG" width="1000">
 
 # Earthquakes what in the world are they?
