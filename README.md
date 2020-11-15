@@ -1,8 +1,9 @@
 # GeoMapping using Leaflet 
-This data incudes the current 7 days of earthquake data with a magnitude of <1 to 5+.. 
-Vist my model  https://dsalisbury1141.github.io/GeoMapping-Earthquakes/
-<b> </b>
-data sources https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+This model incudes the current 7 days of earthquake data with a magnitude of <1 to 5+.[link_text](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) 
+Visit my model  https://dsalisbury1141.github.io/GeoMapping-Earthquakes/
+
+
+Data sources https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
 
 <img align="center" src="https://github.com/dsalisbury1141/Leaflet-Challenge/blob/master/Images/Github%20post.PNG" width="1000">
 
