@@ -1,4 +1,4 @@
-# Leaflet-Challenge 
+# GeoMapping using Leaflet 
 This data incudes the latest 7 day of earthquake data with a magnitude of <1 to 5+.. 
 ## Earthquake Data and Geo-Mapping
 Github publish https://dsalisbury1141.github.io/Leaflet-Challenge
