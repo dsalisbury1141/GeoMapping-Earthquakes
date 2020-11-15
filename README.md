@@ -1,6 +1,6 @@
 # GeoMapping using Leaflet 
-[Click here ](https://dsalisbury1141.github.io/GeoMapping-Earthquakes/)to check out my interactive map showing the last 7 days of [<strong>Earthquake Data </strong>](https://dsalisbury1141.github.io/GeoMapping-Earthquakes/)each marker shows a earthquake with a magnitude of <1 to 5+</strong> Click on the location and see the geological details for that occurrance. Don't forget to look at the map legend and map types.
-<li> <strong>Legend:</strong> shows the color code for the magnitues intensity</li>
+[Click here ](https://dsalisbury1141.github.io/GeoMapping-Earthquakes/)to check out my interactive map showing last 7 days of [<strong>Earthquake Data </strong>](https://dsalisbury1141.github.io/GeoMapping-Earthquakes/)</strong>, click on the marker to see the geological details for that occurrance. Don't forget to look at the map legend and map types.
+<li> <strong>Legend:</strong> shows the color code for the magnitues intensity from 1 to 5+ </li>
 <li> <strong>Map Types:</strong> shows the street map, dark map and satelite maps</li>
 
 
