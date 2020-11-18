@@ -22,3 +22,8 @@ Also very often there are aftershocks, usually earthquakes come in clusters and 
 Follow these links they are a good source, but there are many : 
 http://scecinfo.usc.edu/eqcountry/roots/basics.html#:~:text=Earthquakes%20occur%20on%20faults.,with%20respect%20to%20the%20other
 https://earthquake.usgs.gov/earthquakes/map/?extent=9.1021,-144.22852&extent=59.31077,-45.79102
+
+
+How to run my code: 
+1. Click on the link above to open the Geomap then, choose options to change map from street, night, satellite
+2. Down my repository and use VS code to review then open index page to show map locally
